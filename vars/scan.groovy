@@ -32,7 +32,7 @@ private static void calculateUpdateVersion(Updates updates) {
     int biggestDiff = biggestDiff(updates)
     if (biggestDiff >= 0) {
         while (ints.size() <= biggestDiff)
-            ints += 0
+            ints.add(0) // ints += 0
         if (biggestDiff + 1 < ints.size())
             ints[biggestDiff] += 1
         for (int i = biggestDiff + 1; i < ints.size(); i++)
