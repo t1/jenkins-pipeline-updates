@@ -54,7 +54,7 @@ private static int biggestDiff(Updates updates) {
 }
 
 private static int diff(List<Integer> from, List<Integer> to) {
-    for (int i = 0; i < from.length; i++) {
+    for (int i = 0; i < from.size(); i++) {
         if (from[i] > to[i])
             throw new IllegalArgumentException("invalid version update: $from -> $to")
         if (from[i] < to[i])
