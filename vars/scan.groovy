@@ -1,6 +1,6 @@
 #! groovy
 
-@NonCps
+@NonCPS
 static Updates call(String mvnOut) {
     Updates updates = new Updates()
     String[] lines = mvnOut.split('\n')
