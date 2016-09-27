@@ -53,7 +53,7 @@ private static int biggestDiff(Updates updates) {
     return min
 }
 
-private static int diff(int[] from, int[] to) {
+private static int diff(List<Integer> from, List<Integer> to) {
     for (int i = 0; i < from.length; i++) {
         if (from[i] > to[i])
             throw new IllegalArgumentException("invalid version update: $from -> $to")
@@ -63,13 +63,13 @@ private static int diff(int[] from, int[] to) {
     return (to.size() > from.size()) ? from.size() : Integer.MAX_VALUE
 }
 
-private static int[] numeric(String version) {
+private static List<Integer> numeric(String version) {
     // (version - ~'-SNAPSHOT$').split('\\.').collect { String it -> (it.isInteger()) ? it as Integer : -1 }
     String[] strings = (version - ~'-SNAPSHOT$').split('\\.');
-    int[] ints = new int[strings.length]
+    List<Integer> ints = []
     for (int i = 0; i < strings.length; i++) {
         String string = strings[i]
-        ints[i] = (string.isInteger()) ? string as Integer : -1
+        ints.add((string.isInteger()) ? string as Integer : -1)
     }
     return ints
 }
