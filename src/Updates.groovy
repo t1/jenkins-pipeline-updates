@@ -1,6 +1,9 @@
 #! groovy
+import groovy.transform.Canonical
 
+@Canonical
 class Updates implements Serializable {
+    @Canonical
     static class Update implements Serializable {
         String name, from, to
 
